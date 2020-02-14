@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="src/ch/epfl/lia/frodo/algorithms/XCSPschema.xsd">
+<presentation format="XCSP 2.1_FRODO" maxConstraint="2" maximize="false" name="Rnd3-2.xml"/>
+<agents nbAgents="3">
+<agent name="0"/>
+<agent name="1"/>
+<agent name="2"/>
+</agents>
+<domains nbDomains="1">
+<domain name="D" nbValues="2">1..2</domain>
+</domains>
+<variables nbVariables="3">
+<variable agent="0" domain="D" name="0"/>
+<variable agent="1" domain="D" name="1"/>
+<variable agent="2" domain="D" name="2"/>
+</variables>
+<relations nbRelations="3">
+<relation name="r_1" arity="2" nbTuples="4" semantics="soft">3:1 1 |2:1 2 |4:2 1 |1:2 2 </relation>
+<relation name="r_2" arity="2" nbTuples="4" semantics="soft">3:1 1 |4:1 2 |1:2 1 |2:2 2 </relation>
+<relation name="r_3" arity="2" nbTuples="4" semantics="soft">1:1 1 |2:1 2 |3:2 1 |4:2 2 </relation>
+</relations>
+<constraints nbConstraints="3">
+<constraint name="c_1" arity="2" scope="0 2" reference="r_1"/>
+<constraint name="c_2" arity="2" scope="1 2" reference="r_2"/>
+<constraint name="c_3" arity="2" scope="0 1" reference="r_3"/>
+</constraints>
+</instance>

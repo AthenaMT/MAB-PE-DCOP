@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<instance xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="src/ch/epfl/lia/frodo/algorithms/XCSPschema.xsd">
+<presentation format="XCSP 2.1_FRODO" maxConstraint="2" maximize="true" name="Rnd8-3-3.xml"/>
+<agents nbAgents="8">
+<agent name="0"/>
+<agent name="1"/>
+<agent name="2"/>
+<agent name="3"/>
+<agent name="4"/>
+<agent name="5"/>
+<agent name="6"/>
+<agent name="7"/>
+</agents>
+<domains nbDomains="1">
+<domain name="D" nbValues="3">1..3</domain>
+</domains>
+<variables nbVariables="8">
+<variable agent="0" domain="D" name="0"/>
+<variable agent="1" domain="D" name="1"/>
+<variable agent="2" domain="D" name="2"/>
+<variable agent="3" domain="D" name="3"/>
+<variable agent="4" domain="D" name="4"/>
+<variable agent="5" domain="D" name="5"/>
+<variable agent="6" domain="D" name="6"/>
+<variable agent="7" domain="D" name="7"/>
+</variables>
+<relations nbRelations="28">
+<relation name="r_1" arity="2" nbTuples="9" semantics="soft">9:1 1 |10:1 2 |9:1 3 |10:2 1 |10:2 2 |2:2 3 |6:3 1 |2:3 2 |6:3 3 </relation>
+<relation name="r_2" arity="2" nbTuples="9" semantics="soft">2:1 1 |3:1 2 |9:1 3 |7:2 1 |7:2 2 |6:2 3 |4:3 1 |6:3 2 |8:3 3 </relation>
+<relation name="r_3" arity="2" nbTuples="9" semantics="soft">9:1 1 |2:1 2 |7:1 3 |9:2 1 |10:2 2 |8:2 3 |9:3 1 |10:3 2 |4:3 3 </relation>
+<relation name="r_4" arity="2" nbTuples="9" semantics="soft">7:1 1 |3:1 2 |3:1 3 |2:2 1 |7:2 2 |9:2 3 |3:3 1 |9:3 2 |10:3 3 </relation>
+<relation name="r_5" arity="2" nbTuples="9" semantics="soft">2:1 1 |10:1 2 |3:1 3 |5:2 1 |10:2 2 |5:2 3 |6:3 1 |8:3 2 |2:3 3 </relation>
+<relation name="r_6" arity="2" nbTuples="9" semantics="soft">9:1 1 |3:1 2 |9:1 3 |10:2 1 |6:2 2 |3:2 3 |9:3 1 |10:3 2 |5:3 3 </relation>
+<relation name="r_7" arity="2" nbTuples="9" semantics="soft">7:1 1 |7:1 2 |3:1 3 |6:2 1 |3:2 2 |4:2 3 |5:3 1 |7:3 2 |3:3 3 </relation>
+<relation name="r_8" arity="2" nbTuples="9" semantics="soft">10:1 1 |10:1 2 |2:1 3 |6:2 1 |2:2 2 |10:2 3 |9:3 1 |3:3 2 |8:3 3 </relation>
+<relation name="r_9" arity="2" nbTuples="9" semantics="soft">6:1 1 |7:1 2 |10:1 3 |6:2 1 |3:2 2 |2:2 3 |9:3 1 |5:3 2 |2:3 3 </relation>
+<relation name="r_10" arity="2" nbTuples="9" semantics="soft">4:1 1 |2:1 2 |8:1 3 |8:2 1 |6:2 2 |7:2 3 |10:3 1 |4:3 2 |9:3 3 </relation>
+<relation name="r_11" arity="2" nbTuples="9" semantics="soft">6:1 1 |3:1 2 |6:1 3 |6:2 1 |7:2 2 |5:2 3 |6:3 1 |5:3 2 |2:3 3 </relation>
+<relation name="r_12" arity="2" nbTuples="9" semantics="soft">3:1 1 |9:1 2 |2:1 3 |10:2 1 |9:2 2 |3:2 3 |9:3 1 |2:3 2 |2:3 3 </relation>
+<relation name="r_13" arity="2" nbTuples="9" semantics="soft">9:1 1 |6:1 2 |5:1 3 |10:2 1 |10:2 2 |5:2 3 |5:3 1 |8:3 2 |6:3 3 </relation>
+<relation name="r_14" arity="2" nbTuples="9" semantics="soft">4:1 1 |4:1 2 |4:1 3 |4:2 1 |4:2 2 |3:2 3 |9:3 1 |6:3 2 |5:3 3 </relation>
+<relation name="r_15" arity="2" nbTuples="9" semantics="soft">8:1 1 |3:1 2 |7:1 3 |9:2 1 |6:2 2 |8:2 3 |4:3 1 |4:3 2 |3:3 3 </relation>
+<relation name="r_16" arity="2" nbTuples="9" semantics="soft">7:1 1 |8:1 2 |7:1 3 |7:2 1 |5:2 2 |6:2 3 |9:3 1 |3:3 2 |10:3 3 </relation>
+<relation name="r_17" arity="2" nbTuples="9" semantics="soft">9:1 1 |2:1 2 |4:1 3 |4:2 1 |7:2 2 |5:2 3 |7:3 1 |9:3 2 |4:3 3 </relation>
+<relation name="r_18" arity="2" nbTuples="9" semantics="soft">10:1 1 |7:1 2 |10:1 3 |8:2 1 |4:2 2 |6:2 3 |4:3 1 |2:3 2 |2:3 3 </relation>
+<relation name="r_19" arity="2" nbTuples="9" semantics="soft">4:1 1 |5:1 2 |10:1 3 |3:2 1 |4:2 2 |3:2 3 |3:3 1 |10:3 2 |7:3 3 </relation>
+<relation name="r_20" arity="2" nbTuples="9" semantics="soft">4:1 1 |5:1 2 |7:1 3 |5:2 1 |3:2 2 |5:2 3 |2:3 1 |2:3 2 |6:3 3 </relation>
+<relation name="r_21" arity="2" nbTuples="9" semantics="soft">7:1 1 |4:1 2 |4:1 3 |3:2 1 |5:2 2 |3:2 3 |6:3 1 |2:3 2 |8:3 3 </relation>
+<relation name="r_22" arity="2" nbTuples="9" semantics="soft">10:1 1 |9:1 2 |9:1 3 |10:2 1 |4:2 2 |3:2 3 |9:3 1 |10:3 2 |3:3 3 </relation>
+<relation name="r_23" arity="2" nbTuples="9" semantics="soft">5:1 1 |5:1 2 |3:1 3 |6:2 1 |3:2 2 |7:2 3 |2:3 1 |7:3 2 |2:3 3 </relation>
+<relation name="r_24" arity="2" nbTuples="9" semantics="soft">5:1 1 |9:1 2 |8:1 3 |7:2 1 |7:2 2 |10:2 3 |4:3 1 |10:3 2 |5:3 3 </relation>
+<relation name="r_25" arity="2" nbTuples="9" semantics="soft">9:1 1 |5:1 2 |8:1 3 |6:2 1 |2:2 2 |4:2 3 |2:3 1 |7:3 2 |8:3 3 </relation>
+<relation name="r_26" arity="2" nbTuples="9" semantics="soft">2:1 1 |4:1 2 |3:1 3 |3:2 1 |3:2 2 |4:2 3 |3:3 1 |4:3 2 |9:3 3 </relation>
+<relation name="r_27" arity="2" nbTuples="9" semantics="soft">4:1 1 |10:1 2 |9:1 3 |7:2 1 |7:2 2 |5:2 3 |3:3 1 |10:3 2 |6:3 3 </relation>
+<relation name="r_28" arity="2" nbTuples="9" semantics="soft">10:1 1 |7:1 2 |8:1 3 |3:2 1 |9:2 2 |9:2 3 |3:3 1 |10:3 2 |2:3 3 </relation>
+</relations>
+<constraints nbConstraints="28">
+<constraint name="c_1" arity="2" scope="7 5" reference="r_1"/>
+<constraint name="c_2" arity="2" scope="7 1" reference="r_2"/>
+<constraint name="c_3" arity="2" scope="6 0" reference="r_3"/>
+<constraint name="c_4" arity="2" scope="6 5" reference="r_4"/>
+<constraint name="c_5" arity="2" scope="6 4" reference="r_5"/>
+<constraint name="c_6" arity="2" scope="6 7" reference="r_6"/>
+<constraint name="c_7" arity="2" scope="6 3" reference="r_7"/>
+<constraint name="c_8" arity="2" scope="5 2" reference="r_8"/>
+<constraint name="c_9" arity="2" scope="4 7" reference="r_9"/>
+<constraint name="c_10" arity="2" scope="4 5" reference="r_10"/>
+<constraint name="c_11" arity="2" scope="4 2" reference="r_11"/>
+<constraint name="c_12" arity="2" scope="3 1" reference="r_12"/>
+<constraint name="c_13" arity="2" scope="3 4" reference="r_13"/>
+<constraint name="c_14" arity="2" scope="3 7" reference="r_14"/>
+<constraint name="c_15" arity="2" scope="3 5" reference="r_15"/>
+<constraint name="c_16" arity="2" scope="3 2" reference="r_16"/>
+<constraint name="c_17" arity="2" scope="2 7" reference="r_17"/>
+<constraint name="c_18" arity="2" scope="2 1" reference="r_18"/>
+<constraint name="c_19" arity="2" scope="2 6" reference="r_19"/>
+<constraint name="c_20" arity="2" scope="1 5" reference="r_20"/>
+<constraint name="c_21" arity="2" scope="1 4" reference="r_21"/>
+<constraint name="c_22" arity="2" scope="1 6" reference="r_22"/>
+<constraint name="c_23" arity="2" scope="0 2" reference="r_23"/>
+<constraint name="c_24" arity="2" scope="0 5" reference="r_24"/>
+<constraint name="c_25" arity="2" scope="0 1" reference="r_25"/>
+<constraint name="c_26" arity="2" scope="0 3" reference="r_26"/>
+<constraint name="c_27" arity="2" scope="0 4" reference="r_27"/>
+<constraint name="c_28" arity="2" scope="0 7" reference="r_28"/>
+</constraints>
+</instance>
