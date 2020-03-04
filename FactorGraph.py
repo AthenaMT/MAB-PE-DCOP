@@ -5,6 +5,7 @@ import networkx as nx
 from networkx.algorithms import bipartite
 from Nodes import VNode, FNode
 from fglib import rv
+from pyDcop.pydcop.computations_graph import factor_graph
 
 class FactorGraph:
     #initialize necessary variables
@@ -135,7 +136,7 @@ class FactorGraph:
 
 def main():
     factorGraph = FactorGraph('input/Rnd5-5-4.xml')
-    factorGraph.drawNetwork()
+    #factorGraph.drawNetwork()
 
 if __name__ == "__main__":
     main()
