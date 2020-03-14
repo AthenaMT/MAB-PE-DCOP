@@ -1,5 +1,5 @@
 #Things To Do
-#import
+#import correct modules (complete)
 
 #Load File Correctly (complete)
 #build DCOP objects (complete)
@@ -48,6 +48,7 @@ def load_dcop(filename: str) -> DCOP:
     )
 
     dcop.domains = xml_build_domains(xmlFile)
+    dcop.variables = xml_build_variables(xmlFile, dcop)
 
     return dcop
 
@@ -58,9 +59,21 @@ def xml_build_domains(xmlFile) -> Dict[str, VariableDomain]:
         domain_name = domain.attributes['name'].value
         domain_type = 'd'
         domain_values = str_2_domain_values(domain.childNodes[0].wholeText)
-        domains_dict[domain_name] = VariableDomain(domain_name, domain_type, domain_values)
+        new_domain = VariableDomain(domain_name, domain_type, domain_values)
+        domains_dict[domain_name] = new_domain
 
     return domains_dict
+
+def xml_build_variables(xmlFile, dcop) -> Dict[str, Variable]:
+    variables_dict = {}
+    variables = xmlFile.getElementsByTagName('variable')
+    for variable in variables:
+        variable_name = variable.attributes['name'].value
+        variable_domain = dcop.domain(variable.attributes['domain'].value)
+        initial_value = None
+        variables_dict[variable_name] = Variable(variable_name, variable_domain, initial_value)
+
+    return variables_dict
 
 def str_2_domain_values(domain_str):
     """
