@@ -59,6 +59,8 @@ def load_dcop(filenames: str) -> DCOP:
     content = ""
     if isinstance(filenames, CollectionIterable):
         filename = filenames[0]
+    else:
+        filename = filenames
     xmlFile = minidom.parse(filename)
     xmlPresentation = xmlFile.getElementsByTagName('presentation')
     xmlName = xmlPresentation[0].attributes['name'].value
@@ -85,7 +87,6 @@ def xml_build_domains(xmlFile) -> Dict[str, VariableDomain]:
         domain_values = str_2_domain_values(domain.childNodes[0].wholeText)
         new_domain = VariableDomain(domain_name, domain_type, domain_values)
         domains_dict[domain_name] = new_domain
-
     return domains_dict
 
 def xml_build_variables(xmlFile, dcop) -> Dict[str, Variable]:
@@ -136,10 +137,11 @@ def xml_build_constraints(xmlFile, dcop) -> Dict[str, RelationProtocol]:
                 for i, val_def in enumerate(vals_def[:-1]):
                     iv, _ = constraint_variables[i].domain.to_domain_value(val_def.strip())
                     val_position = val_position[iv]
+
                 # value for the last variable of the assignment
                 val_def = vals_def[-1]
                 iv, _ = constraint_variables[-1].domain.to_domain_value(val_def.strip())
-                val_position[iv] = value
+                val_position[iv] = int(value)
         constraints_dict[constraint_name] = NAryMatrixRelation(constraint_variables, values, name=constraint_name)
 
     return constraints_dict
@@ -344,7 +346,6 @@ def _build_constraints(loaded, dcop) -> Dict[str, RelationProtocol]:
                     "Error in contraints {} definition: type is  mandatory "
                     'and must be "intention" or "intensional"'.format(c_name)
                 )
-
     return constraints
 
 def _build_agents(loaded) -> Dict[str, AgentDef]:
@@ -424,8 +425,6 @@ def _build_agents(loaded) -> Dict[str, AgentDef]:
             routes=routes_a,
             **agents_list[a]
         )
-    #print (agents)
-
     return agents
 
 def _build_dist_hints(loaded, dcop):
@@ -462,127 +461,7 @@ def _build_dist_hints(loaded, dcop):
         must_host, dict(host_with) if host_with is not None else {}
     )
 
-# with open('input/graph_coloring_3agts.yaml') as file:
-#     load_yaml_dcop(file)
-# def _results(status):
-#     """
-#     Outputs results and metrics on stdout and trace last metrics in csv
-#     files if requested.
-#
-#     :param status:
-#     :return:
-#     """
-#
-#     metrics = orchestrator.end_metrics()
-#     metrics["status"] = status
-#     global end_metrics, run_metrics
-#     if end_metrics is not None:
-#         add_csvline(end_metrics, collect_on, metrics)
-#     if run_metrics is not None:
-#         add_csvline(run_metrics, collect_on, metrics)
-#
-#     if output_file:
-#         with open(output_file, encoding="utf-8", mode="w") as fo:
-#             fo.write(json.dumps(metrics, sort_keys=True, indent="  ", cls=NumpyEncoder))
-#
-#     print(json.dumps(metrics, sort_keys=True, indent="  ", cls=NumpyEncoder))
-#
-#
-# dcop = None
-# orchestrator = None
-# INFINITY = None
-#
-# # Files for logging metrics
-# columns = {
-#     "cycle_change": [
-#         "cycle",
-#         "time",
-#         "cost",
-#         "violation",
-#         "msg_count",
-#         "msg_size",
-#         "status",
-#     ],
-#     "value_change": [
-#         "time",
-#         "cycle",
-#         "cost",
-#         "violation",
-#         "msg_count",
-#         "msg_size",
-#         "status",
-#     ],
-#     "period": ["time", "cycle", "cost", "violation", "msg_count", "msg_size", "status"],
-# }
-#
-# collect_on = None
-# run_metrics = None
-# end_metrics = None
-#
-# timeout_stopped = False
-# output_file = None
-#
-# with open('input/graph_coloring_3agts.yaml') as file:
-#     dcop = load_yaml_dcop(file)
-# distribution = 'oneagent'
-# algo_name = 'maxsum'
-# dist_module, algo_module, graph_module = _load_modules(distribution, algo_name)
-# cg = graph_module.build_computation_graph(dcop)
-# if dist_module is not None:
-#
-#     if not hasattr(algo_module, "computation_memory"):
-#         algo_module.computation_memory = lambda *v, **k: 0
-#     if not hasattr(algo_module, "communication_load"):
-#         algo_module.communication_load = lambda *v, **k: 0
-#
-#     distribution = dist_module.distribute(
-#         cg,
-#         dcop.agents.values(),
-#         hints=dcop.dist_hints,
-#         computation_memory=algo_module.computation_memory,
-#         communication_load=algo_module.communication_load,
-#     )
-# else:
-#     distribution = load_dist_from_file(args.distribution)
-#
-# collector_queue = Queue()
-# collect_t = Thread(
-#     target=collect_tread, args=[collector_queue, csv_cb], daemon=True
-# )
-# collect_t.start()
-#
-# period = None
-# algo = build_algo_def(algo_module, algo_name, dcop.objective, None)
-# #orchestrator = run_local_thread_dcop(algo, cg, distribution, dcop, None)
-# orchestrator = run_local_thread_dcop(
-#     algo,
-#     cg,
-#     distribution,
-#     dcop,
-#     INFINITY,
-#     collector=collector_queue,
-#     collect_moment=None,
-#     period=period,
-#     delay=None,
-#     uiport=None,
-# )
-# try:
-#     orchestrator.deploy_computations()
-#     orchestrator.run(timeout=timeout)
-#     if timer:
-#         timer.cancel()
-#     if not timeout_stopped:
-#         if orchestrator.status == "TIMEOUT":
-#             _results("TIMEOUT")
-#             sys.exit(0)
-#         elif orchestrator.status != "STOPPED":
-#             _results("FINISHED")
-#             sys.exit(0)
-#
-#     # in case it did not stop, dump remaining threads
-#
-# except Exception as e:
-#     logger.error(e, exc_info=1)
-#     orchestrator.stop_agents(5)
-#     orchestrator.stop()
-#     _results("ERROR")
+# xmldcop = load_dcop(['Rnd5-5-3.xml'])
+# 
+# with open('graph_coloring_50.yaml') as file:
+#     yamldcop = load_yaml_dcop(file)
