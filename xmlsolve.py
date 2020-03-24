@@ -220,7 +220,7 @@ import functools
 
 from pydcop.algorithms import list_available_algorithms
 from pydcop.commands._utils import build_algo_def, _error, _load_modules
-from xmldcop import load_dcop, load_yaml_dcop, load_yaml_dcop_from_file
+from xmldcop import load_dcop
 from pydcop.distribution.yamlformat import load_dist_from_file
 from pydcop.infrastructure.run import run_local_thread_dcop, run_local_process_dcop
 from pydcop.dcop.yamldcop import load_dcop_from_file

@@ -1,15 +1,3 @@
-#Things To Do
-#import correct modules (complete)
-
-#Load File Correctly (complete)
-#build DCOP objects (complete)
-#build Domains (complete)
-#build Variables
-#build ExternalVariables?
-#build Constraints
-#build Agents
-#build dist_hints (may not even be necessary)
-
 from collections import defaultdict
 from collections import Iterable as CollectionIterable
 from typing import Dict, Iterable, Union, List
@@ -42,18 +30,6 @@ from pydcop.dcop.relations import (
 )
 from pyDcop.pydcop.commands._utils import build_algo_def, _load_modules
 from pydcop.infrastructure.run import run_local_thread_dcop
-
-# import pyDcop.pydcop.algorithms.maxsum as ms
-# import pyDcop.pydcop.computations_graph.factor_graph
-
-
-#things for load_dcop
-# dcop.domains = _build_domains(loaded)
-# dcop.variables = _build_variables(loaded, dcop)
-# dcop.external_variables = _build_external_variables(loaded, dcop)
-# dcop._constraints = _build_constraints(loaded, dcop)
-# dcop._agents_def = _build_agents(loaded)
-# dcop.dist_hints = _build_dist_hints(loaded, dcop)
 
 def load_dcop(filenames: str) -> DCOP:
     content = ""
