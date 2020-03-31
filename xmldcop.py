@@ -5,6 +5,7 @@ import numpy as np
 from queue import Queue, Empty
 import threading
 from threading import Thread
+import math
 
 
 
@@ -78,12 +79,15 @@ def xml_build_variables(xmlFile, dcop) -> Dict[str, Variable]:
 
 def xml_build_constraints(xmlFile, dcop) -> Dict[str, RelationProtocol]:
     constraints_dict = {}
+    constraint_normaldistribution_dict = {}
     constraints = xmlFile.getElementsByTagName('constraint')
 
     for constraint in constraints:
         assignment_dict = {}
         default = None
         constraint_name = constraint.attributes['name'].value
+        #the first value is mu_max, and the second is the variance
+        constraint_normaldistribution_dict[constraint_name] = [np.random.uniform(10), np.random.uniform(1)]
         constraint_variables = constraint.attributes['scope'].value.split(' ')
         constraint_variables = [dcop.variable(v) for v in constraint_variables]
         values = assignment_matrix(constraint_variables, default)
@@ -96,6 +100,9 @@ def xml_build_constraints(xmlFile, dcop) -> Dict[str, RelationProtocol]:
                 constraintTableArray = constraintTableData.split('|')
                 for assignment in constraintTableArray:
                     value_state_pair = assignment.split(':')
+                    #first parameter is mu and second paramter is sigma
+                    value_state_pair[0] = np.random.normal(constraint_normaldistribution_dict[constraint_name][0],
+                                                            math.sqrt(constraint_normaldistribution_dict[constraint_name][1]))
                     if value_state_pair[0] not in assignment_dict:
                         assignment_dict[value_state_pair[0]] = value_state_pair[1]
                     else:
