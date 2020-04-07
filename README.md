@@ -2,7 +2,7 @@
 
 We used the pyDCOP framework to construct a new algorithm, heist, to solve DCOP (Decentralized Constraint Optimization Problems)
 
-# Running Application
+# Running the Application
 
 To run the program do the following:
 1) cd pyDCOP
@@ -11,7 +11,7 @@ To run the program do the following:
 
 # Installing
 
-To install simply clone in the desired folder using the git clone command
+To install, simply clone in the desired folder using the git clone command
 
 # Dependencies
 
