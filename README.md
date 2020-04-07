@@ -13,6 +13,6 @@ To run the program do the following:
 
 To install simply clone in the desired folder using the git clone command
 
-# Dependecies
+# Dependencies
 
 It is required to have python 3.0+. To install python 3, please follow the direction on the python website: https://www.python.org
