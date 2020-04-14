@@ -14,10 +14,10 @@
 </variables>
 <relations nbRelations="2">
 <relation name="r_1" arity="2" nbTuples="4" semantics="soft">3:1 1 |5:1 2 |2:2 1 |1.1:2 2 </relation>
-<relation name="r_2" arity="2" nbTuples="4" semantics="soft">5:1 1 |2:2 1 </relation>
+<relation name="r_2" arity="1" nbTuples="2" semantics="soft">5:1 | 2:2 </relation>
 </relations>
 <constraints nbConstraints="2">
 <constraint name="c_1" arity="2" scope="0 1" reference="r_1"/>
-<constraint name="c_2" arity="2" scope="1" reference="r_2"/>
+<constraint name="c_2" arity="1" scope="1" reference="r_2"/>
 </constraints>
 </instance>
