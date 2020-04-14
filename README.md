@@ -6,8 +6,8 @@ We used the pyDCOP framework to construct a new algorithm, heist, to solve DCOP 
 
 To run the program do the following:
 1) cd pyDCOP
-2) python3 xmlsolve.py xml_solve --algo heist 'file_path'
-3) press ctrl + c when done
+2) python3 xmlsolve.py xml_solve --algo heisthelper 'file_path'
+3) press ctrl + c when done or wait for it to finishing running
 
 # Installing
 
