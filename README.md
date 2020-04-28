@@ -2,13 +2,6 @@
 
 We used the pyDCOP framework to construct a new algorithm, heist, to solve DCOP (Decentralized Constraint Optimization Problems)
 
-# Running the Application
-
-To run the program do the following:
-1) cd pyDCOP
-2) python3 xmlsolve.py xml_solve --algo heisthelper 'file_path' (look at Heist Implementation.pdf for more commands)
-3) press ctrl + c when done or wait for it to finishing running
-
 # First Time Installation
 
 1) git clone https://github.com/AthenaMT/MAB-PE-DCOP.git
@@ -21,6 +14,13 @@ To run the program do the following:
 2) git pull
 3) cd pyDcop
 4) git pull
+
+# Running the Application
+
+To run the program do the following:
+1) cd pyDCOP
+2) python3 xmlsolve.py xml_solve --algo heisthelper 'file_path' (look at Heist Implementation.pdf for more commands)
+3) press ctrl + c when done or wait for it to finishing running
 
 # Dependencies
 
