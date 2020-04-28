@@ -8,7 +8,7 @@ We used the pyDCOP framework to construct a new algorithm, heist, to solve DCOP 
 2) cd MAB-PE-DCOP
 3) git clone https://github.com/AumeshMisra/pyDcop.git
 
-# Updating MAB-PE-Dcop
+# Updating MAB-PE-DCOP
 
 1) cd MAB-PE-DCOP
 2) git pull
